@@ -77,7 +77,7 @@ def mix_up(a, b):
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
-    """Your code goes here.  Edit this docstring."""
+    """checking if tests received expected returns"""
     if got == expected:
         prefix = ' OK '
     else:
@@ -88,7 +88,7 @@ def test(got, expected):
 # Provided main() calls the above functions with interesting inputs,
 # using test() to check if each result is correct or not.
 def main():
-    """Your code goes here.  Edit this docstring."""
+    """Testing each of the katas."""
     print('donuts')
     # Each line calls donuts, compares its result to the expected for that call.
     test(donuts(4), 'Number of donuts: 4')

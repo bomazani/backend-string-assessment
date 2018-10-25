@@ -18,6 +18,13 @@
 
 
 def verbing(s):
+    # if < 3 (skip)
+    # if >= 3
+        # if last 3 == ing
+            append "ly"
+        # else:
+            append "ing"
+
     """Your code goes here.  Edit this docstring."""
     return
 

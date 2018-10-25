@@ -6,6 +6,8 @@
 # Google's Python Class
 # http://code.google.com/edu/languages/google-python-class/
 
+import math
+
 # Additional basic string exercises
 
 # D. verbing
@@ -21,12 +23,16 @@ def verbing(s):
     # if < 3 (skip)
     # if >= 3
         # if last 3 == ing
-            append "ly"
+            # append "ly"
         # else:
-            append "ing"
+            # append "ing"
 
-    """Your code goes here.  Edit this docstring."""
-    return
+    if len(s) >= 3:
+        if s[-3:] == "ing":
+            s = s + "ly"
+        else:
+            s = s + "ing"
+    return s
 
 
 # E. not_bad
@@ -38,8 +44,13 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
-    """Your code goes here.  Edit this docstring."""
-    return
+    n_index = s.find('not')
+    b_index = s.find('bad')
+    end_index = b_index + 3
+    if n_index < b_index:
+        s = s[:n_index] + 'good' + s[end_index:]
+
+    return s
 
 
 # F. front_back
@@ -50,14 +61,18 @@ def not_bad(s):
 # Given 2 strings, a and b, return a string of the form
 #  a-front + b-front + a-back + b-back
 def front_back(a, b):
-    """Your code goes here.  Edit this docstring."""
-    return
+    back_a = int(math.floor(len(a)/2))
+    front_a = len(a) - back_a
+    back_b = int(math.floor(len(b)/2))
+    front_b = len(b) - back_b
+    c = a[:(front_a)] + b[:(front_b)] + a[(back_a * -1):] + b[(back_b * -1):]
+    return c
 
 
 # Provided simple test() function used in main() to print
 # what each function returns vs. what it's supposed to return.
 def test(got, expected):
-    """Your code goes here.  Edit this docstring."""
+    """Indicate if individual tests returned expected results"""
     if got == expected:
         prefix = ' OK '
     else:
@@ -68,7 +83,7 @@ def test(got, expected):
 # main() calls the above functions with interesting inputs,
 # using the above test() to check if the result is correct or not.
 def main():
-    """Your code goes here.  Edit this docstring."""
+    """Run multiple tests with different inputs."""
     print('verbing')
     test(verbing('hail'), 'hailing')
     test(verbing('swiming'), 'swimingly')

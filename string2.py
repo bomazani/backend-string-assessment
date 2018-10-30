@@ -28,7 +28,7 @@ def verbing(s):
             # append "ing"
 
     if len(s) >= 3:
-        if s[-3:] == "ing":
+        if s[-3:] == "ing": #.endswith()
             s = s + "ly"
         else:
             s = s + "ing"
@@ -44,10 +44,11 @@ def verbing(s):
 # So 'This dinner is not that bad!' yields:
 # This dinner is good!
 def not_bad(s):
+    
     n_index = s.find('not')
     b_index = s.find('bad')
-    end_index = b_index + 3
-    if n_index < b_index:
+    end_index = b_index + 3 #should not hard code "3", but it works.
+    if n_index != -1 and b_index != -1 and n_index < b_index:
         s = s[:n_index] + 'good' + s[end_index:]
 
     return s

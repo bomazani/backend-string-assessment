@@ -37,9 +37,10 @@ def donuts(count):
 # so 'spring' yields 'spng'. However, if the string length
 # is less than 2, return instead the empty string.
 def both_ends(s):
-    new_string = s[:2] + s[-2:]
     if len(s) < 2:
         new_string = ""
+    else:
+        new_string = s[:2] + s[-2:]
     return new_string
 
 
@@ -70,8 +71,7 @@ def fix_start(s):
 def mix_up(a, b):
     a2 = b[:2] + a[2:]
     b2 = a[:2] + b[2:]
-    c = a2 + ' ' + b2
-    return c
+    return a2 + ' ' + b2
 
 
 # Provided simple test() function used in main() to print
